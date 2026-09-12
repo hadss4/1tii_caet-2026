@@ -84,8 +84,8 @@ for (const item of info) {
             datasets: [{
                 data: item.data,
                 backgroundColor: ['#1b7b3d', '#2dc48d', '#b7ff90', '#73d6ee', '#1a67a5', '#0d3b66'],
-                borderWidth: 1,
-                borderColor: '#ffffff',
+                borderWidth: 0.3,
+                borderColor: '#0a3323',
             }]
         },
         options: {

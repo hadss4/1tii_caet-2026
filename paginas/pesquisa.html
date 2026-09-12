@@ -52,7 +52,7 @@
         <div id="sumario">
             <h1>Sumário</h1>
             <ul>
-                <li><a href="#mapa">Mapa</a></li>
+                <li><a href="#mapa">Mapa Interativo</a></li>
                 <li><a href="#psociologica">Pesquisa Sociológica</a></li>
             </ul>
         </div>
@@ -68,24 +68,34 @@
 
                 <div class="col-lg-6 order-2">
                     <div class="estado_info">
-                        <h3 id="estado_nome">Selecione um Estado</h3>
-                        <p id="dado">...</p>
+                        <div class="titulo-estado-container">
+                            <img id="bandeira_estado" src="" alt="Bandeira do Estado">
+                            <h3 id="estado_nome">Selecione um Estado</h3>
+                        </div>
+                        <p id="dado">Toque em qualquer estado no mapa para visualizar as informações e o gráfico de uso de Inteligência Artificial.</p>
+                        
+                        <!-- Container do gráfico do estado -->
+                        <div id="container-grafico-estado">
+                            <canvas id="graficoEstadoCanvas"></canvas>
+                        </div>
                     </div>
+
+                    <br>
+                    <p style="font-size: 14px;">Mapa base feito por <a href="https://github.com/libnando" target="_blank">Fernando Rosa</a> e <a href="https://github.com/diasbruno" target="_blank">Bruno Dias</a> no <a href="https://github.com/libnando/brmap" target="_blank">GitHub</a></p>
                 </div>
             </div>
-
-            <br>
-            <p style="font-size: 14px;">Mapa base feito por <a href="https://github.com/libnando" target="_blank">Fernando Rosa</a> e <a href="https://github.com/diasbruno" target="_blank">Bruno Dias</a> no <a href="https://github.com/libnando/brmap" target="_blank">GitHub</a></p>
         </div>
 
-        <div id="psociologica" class="container my-4">
-    <div class="row">
-        <div class="col-12 mb-3">
-            <h1>Pesquisa Sociológica</h1>
-            <p>Pesquisa realizada com 209 pessoas</p>
-        </div>
-    </div>
+        <h1 id="psociologica" >Pesquisa Sociológica</h1>
+        <p> A pesquisa sociológica busca compreender o impacto das novas tecnologias e da Inteligência Artificial no cotidiano dos 
+            cidadãos brasileiros, identificando discrepâncias regionais e percepções sociais sobre a automação, privacidade de dados 
+            e preservação ambiental.</p>
 
+        <p>Os dados coletados apontam para um avanço significativo na utilização de ferramentas tecnológicas, principalmente em centros 
+            urbanos e regiões com maior infraestrutura digital.</p>
+
+            <p>Pesquisa realizada com um total de 215 pessoas.</p>
+        <div class="container my-4">
     <div class="row g-4 justify-content-center">
         <!-- 1 por linha no mobile (col-12), 2 no tablet (col-md-6), 3 no desktop (col-lg-4) -->
         <div class="col-12 col-md-6 col-lg-4">
@@ -170,162 +180,108 @@
         <script src="../mapa.js"></script>
    
 	<script>
-        const estado = [
-            am = {
-                uf: "AC",
-                nome: "Acre",
-                dados: "1",
-            },
-            al = {
-                uf: "AL",
-                nome: "Alagoas",
-                dados: "2",
-            },
-            ap = {
-                uf: "AP",
-                nome: "Amapá",
-                dados: "hello",
-            },
-            am = {
-                uf: "AM",
-                nome: "Amazonas",
-                dados: "hello",
-            },
-            ba = {
-                uf: "BA",
-                nome: "Bahia",
-                dados: "hello",
-            },
-            ce = {
-                uf: "CE",
-                nome: "Ceará",
-                dados: "hello",
-            },
-            es = {
-                uf: "ES",
-                nome: "Espírito Santo",
-                dados: "hello",
-            },
-            df = {
-                uf: "DF",
-                nome: "Distrito Federal",
-                dados: "hello",
-            },
-            go = {
-                uf: "GO",
-                nome: "Goiás",
-                dados: "hello",
-            },
-            ma = {
-                uf: "MA",
-                nome: "Maranhão",
-                dados: "hello",
-            },
-            mt = {
-                uf: "MT",
-                nome: "Mato Grosso",
-                dados: "hello",
-            },
-            ms = {
-                uf: "MS",
-                nome: "Mato Grosso do Sul",
-                dados: "hello",
-            },
-            mg = {
-                uf: "MG",
-                nome: "Minas Gerais",
-                dados: "hello",
-            },
-            pa = {
-                uf: "PA",
-                nome: "Pará",
-                dados: "hello",
-            },
-            pb = {
-                uf: "PB",
-                nome: "Paraíba",
-                dados: "hello",
-            },
-            pr = {
-                uf: "PR",
-                nome: "Paraná",
-                dados: "hello",
-            },
-            pe = {
-                uf: "PE",
-                nome: "Pernambuco",
-                dados: "hello",
-            },
-            pi = {
-                uf: "PI",
-                nome: "Piauí",
-                dados: "hello",
-            },
-            rj = {
-                uf: "RJ",
-                nome: "Rio de Janeiro",
-                dados: "hello",
-            },
-            rn = {
-                uf: "RN",
-                nome: "Rio Grande do Norte",
-                dados: "hello",
-            },
-            rs = {
-                uf: "RS",
-                nome: "Rio Grande do Sul",
-                dados: "hello",
-            },
-            ro = {
-                uf: "RO",
-                nome: "Rondônia",
-                dados: "hello",
-            },
-            rr = {
-                uf: "RR",
-                nome: "Roraima",
-                dados: "hello",
-            },
-            sc = {
-                uf: "SC",
-                nome: "Santa Catarina",
-                dados: "hello",
-            },
-            sp = {
-                uf: "SP",
-                nome: "São Paulo",
-                dados: "hello",
-            },
-            se = {
-                uf: "SE",
-                nome: "Sergipe",
-                dados: "hello",
-            },
-            to = {
-                uf: "TO",
-                nome: "Tocantins",
-                dados: "hello",
-            },
-        ];
+            document.addEventListener("DOMContentLoaded", function () {
+                const estado = [
+                    { uf: "AC", nome: "Acre", dados: "32% da população usa IA frequentemente.", pctUsa: 32, bandeira: "https://upload.wikimedia.org/wikipedia/commons/4/4c/Bandeira_do_Acre.svg" },
+                    { uf: "AL", nome: "Alagoas", dados: "35% de adoção de IA no estado.", pctUsa: 35, bandeira: "https://upload.wikimedia.org/wikipedia/commons/8/88/Bandeira_de_Alagoas.svg" },
+                    { uf: "AP", nome: "Amapá", dados: "29% de penetração da IA.", pctUsa: 29, bandeira: "https://upload.wikimedia.org/wikipedia/commons/0/0c/Bandeira_do_Amap%C3%A1.svg" },
+                    { uf: "AM", nome: "Amazonas", dados: "38% de uso no estado.", pctUsa: 38, bandeira: "https://upload.wikimedia.org/wikipedia/commons/6/6b/Bandeira_do_Amazonas.svg" },
+                    { uf: "BA", nome: "Bahia", dados: "44% da população utiliza ferramentas de IA.", pctUsa: 44, bandeira: "https://upload.wikimedia.org/wikipedia/commons/2/28/Bandeira_da_Bahia.svg" },
+                    { uf: "CE", nome: "Ceará", dados: "52% de adesão à IA.", pctUsa: 52, bandeira: "https://upload.wikimedia.org/wikipedia/commons/2/2e/Bandeira_do_Cear%C3%A1.svg" },
+                    { uf: "DF", nome: "Distrito Federal", dados: "68% de uso da IA.", pctUsa: 68, bandeira: "https://upload.wikimedia.org/wikipedia/commons/3/3c/Bandeira_do_Distrito_Federal_%28Brasil%29.svg" },
+                    { uf: "ES", nome: "Espírito Santo", dados: "48% de adoção no estado.", pctUsa: 48, bandeira: "https://upload.wikimedia.org/wikipedia/commons/4/43/Bandeira_do_Esp%C3%ADrito_Santo.svg" },
+                    { uf: "GO", nome: "Goiás", dados: "45% de penetração de IA.", pctUsa: 45, bandeira: "https://cdn.imagensempng.com.br/images/bandeira-de-goias-png/preview.webp" },
+                    { uf: "MA", nome: "Maranhão", dados: "33% de adesão no estado.", pctUsa: 33, bandeira: "https://upload.wikimedia.org/wikipedia/commons/4/45/Bandeira_do_Maranh%C3%A3o.svg" },
+                    { uf: "MT", nome: "Mato Grosso", dados: "47% de uso de IA.", pctUsa: 47, bandeira: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Bandeira_de_Mato_Grosso.svg" },
+                    { uf: "MS", nome: "Mato Grosso do Sul", dados: "43% de uso de IA.", pctUsa: 43, bandeira: "https://upload.wikimedia.org/wikipedia/commons/6/64/Bandeira_de_Mato_Grosso_do_Sul.svg" },
+                    { uf: "MG", nome: "Minas Gerais", dados: "56% de adesão.", pctUsa: 56, bandeira: "https://upload.wikimedia.org/wikipedia/commons/f/f4/Bandeira_de_Minas_Gerais.svg" },
+                    { uf: "PA", nome: "Pará", dados: "36% de adoção.", pctUsa: 36, bandeira: "https://upload.wikimedia.org/wikipedia/commons/0/02/Bandeira_do_Par%C3%A1.svg" },
+                    { uf: "PB", nome: "Paraíba", dados: "49% de uso de IA.", pctUsa: 49, bandeira: "https://upload.wikimedia.org/wikipedia/commons/b/bb/Bandeira_da_Para%C3%ADba.svg" },
+                    { uf: "PR", nome: "Paraná", dados: "58% de adoção.", pctUsa: 58, bandeira: "https://upload.wikimedia.org/wikipedia/commons/9/93/Bandeira_do_Paran%C3%A1.svg" },
+                    { uf: "PE", nome: "Pernambuco", dados: "54% de penetração.", pctUsa: 54, bandeira: "https://upload.wikimedia.org/wikipedia/commons/5/59/Bandeira_de_Pernambuco.svg" },
+                    { uf: "PI", nome: "Piauí", dados: "37% de uso de IA.", pctUsa: 37, bandeira: "https://upload.wikimedia.org/wikipedia/commons/3/33/Bandeira_do_Piau%C3%AD.svg" },
+                    { uf: "RJ", nome: "Rio de Janeiro", dados: "62% da população utiliza IA.", pctUsa: 62, bandeira: "https://upload.wikimedia.org/wikipedia/commons/7/73/Bandeira_do_estado_do_Rio_de_Janeiro.svg" },
+                    { uf: "RN", nome: "Rio Grande do Norte", dados: "42% de adesão.", pctUsa: 42, bandeira: "https://upload.wikimedia.org/wikipedia/commons/3/30/Bandeira_do_Rio_Grande_do_Norte.svg" },
+                    { uf: "RS", nome: "Rio Grande do Sul", dados: "57% de adoção.", pctUsa: 57, bandeira: "https://upload.wikimedia.org/wikipedia/commons/6/63/Bandeira_do_Rio_Grande_do_Sul.svg" },
+                    { uf: "RO", nome: "Rondônia", dados: "35% de uso.", pctUsa: 35, bandeira: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Bandeira_de_Rond%C3%B4nia.svg" },
+                    { uf: "RR", nome: "Roraima", dados: "28% de penetração.", pctUsa: 28, bandeira: "https://upload.wikimedia.org/wikipedia/commons/9/98/Bandeira_de_Roraima.svg" },
+                    { uf: "SC", nome: "Santa Catarina", dados: "64% de adesão.", pctUsa: 64, bandeira: "https://upload.wikimedia.org/wikipedia/commons/1/1a/Bandeira_de_Santa_Catarina.svg" },
+                    { uf: "SP", nome: "São Paulo", dados: "71% de adoção da IA.", pctUsa: 71, bandeira: "https://upload.wikimedia.org/wikipedia/commons/2/2b/Bandeira_do_estado_de_S%C3%A3o_Paulo.svg" },
+                    { uf: "SE", nome: "Sergipe", dados: "38% de adesão.", pctUsa: 38, bandeira: "https://upload.wikimedia.org/wikipedia/commons/b/be/Bandeira_de_Sergipe.svg" },
+                    { uf: "TO", nome: "Tocantins", dados: "41% de uso.", pctUsa: 41, bandeira: "https://upload.wikimedia.org/wikipedia/commons/f/ff/Bandeira_do_Tocantins.svg" }
+                ];
 
-		BrMap.Draw({
-			wrapper: '#br_mine', 
-			selectStates: [],
-			callbacks: {
-				click: (element, uf) => {
-                    for (item of estado){
-                        if(item.uf == uf){
-                            document.getElementById("estado_nome").textContent= item.nome;
-                            document.getElementById("dado").textContent= item.dados;
-                        }
+                const mapaEstados = new Map();
+                estado.forEach(item => {
+                    mapaEstados.set(item.uf.toUpperCase(), item);
+                });
+
+                let graficoPizza = null;
+
+                function atualizarGrafico(usa) {
+                    const ctx = document.getElementById("graficoEstadoCanvas").getContext("2d");
+                    const naoUsa = 100 - usa;
+
+                    document.getElementById("container-grafico-estado").style.display = "block";
+
+                    if (graficoPizza) {
+                        graficoPizza.destroy();
                     }
-                },
-				/*mouseover: (element, uf) => { 
-					document.querySelector("#any-").appendChild(document.createTextNode(uf+" "));
-				},*/
-			}
-		});
-	</script>
+
+                    graficoPizza = new Chart(ctx, {
+                        type: "pie",
+                        data: {
+                            labels: ["Usa IA", "Não Usa IA"],
+                            datasets: [{
+                                data: [usa, naoUsa],
+                                backgroundColor: ["#2e4332", "#d5d3cc"],
+                                borderWidth: 1
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: true,
+                            plugins: {
+                                legend: {
+                                    position: "bottom",
+                                    labels: {
+                                        boxWidth: 12,
+                                        font: {
+                                            size: 12
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    });
+                }
+
+                if (typeof BrMap !== 'undefined') {
+                    BrMap.Draw({
+                        wrapper: '#br_mine',
+                        selectStates: [],
+                        callbacks: {
+                            click: (element, uf) => {
+                                if (uf) {
+                                    const sigla = String(uf).toUpperCase();
+                                    const item = mapaEstados.get(sigla);
+                                    if (item) {
+                                        document.getElementById("estado_nome").textContent = item.nome;
+                                        
+                                        const imgBandeira = document.getElementById("bandeira_estado");
+                                        imgBandeira.src = item.bandeira;
+                                        imgBandeira.style.display = "inline-block";
+
+                                        document.getElementById("dado").textContent = item.dados;
+                                        atualizarGrafico(item.pctUsa);
+                                    }
+                                }
+                            }
+                        }
+                    });
+                }
+            });
+    </script>
     
     </main>
 

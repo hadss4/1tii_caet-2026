@@ -114,9 +114,98 @@ main.pagina-video {
     color: inherit;
 }
 
+#download ul, #downloadslide ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+#download li a, #downloadslide li a{
+    display: inline-block;
+    background-color: #2e4332;
+    color: #d5d3cc;
+    padding: 12px 24px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+#download li a:hover, #downloadslide li a:hover{
+    background-color: #1e2d22;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+#download i, #downloadslide i{
+    margin-right: 8px;
+}
+
 /* PESQUISA */
 main div p, main div li{
     text-align: justify;
+}
+
+#mapa {
+    background-color: rgba(255, 255, 255, 0.25);
+    border-radius: 16px;
+    padding: 25px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.10);
+}
+
+
+.estado_info {
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    background-color: rgba(255, 255, 255, 0.35);
+    border-radius: 14px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+.titulo-estado-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+#bandeira_estado {
+    display: none;
+    width: 32px;
+    height: auto;
+    border-radius: 3px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.25);
+    object-fit: cover;
+}
+
+#estado_nome {
+    color: var(--bl);
+    font-weight: bold;
+    margin: 0;
+}
+
+#dado {
+    font-size: 17px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+#container-grafico-estado {
+    display: none;
+    width: 100%;
+    max-width: 280px;
+    margin: 10px auto 0;
 }
 
 /* Container com a mesma cor do fundo, mas delimitado */
@@ -154,6 +243,16 @@ main div p, main div li{
 
 #logo .nquebrar{
     white-space: wrap;
+}
+
+#download ul, #downloadslide ul {
+    flex-direction: column;
+    gap: 10px;
+}
+
+#download li a, #downloadslide li a{
+    display: block;
+    text-align: center;
 }
 
 /* VIDEO */
