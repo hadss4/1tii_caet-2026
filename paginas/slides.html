@@ -58,10 +58,6 @@
             <h1>Sumário</h1>
             <ul>
                 <li><a href="#abertura">Visão Geral</a></li>
-                <ul>
-                    <li><a href="#pt">Em português</a></li>
-                    <li><a href="#en">Em inglês</a></li>
-                </ul>
                 <li><a href="#slide">Slide</a></li>
                 <ul>
                     <li><a href="#downloadslide">Baixe o Slide</a></li>
@@ -69,12 +65,16 @@
             </ul>
         </div>
 
+        <h1>Visão Geral</h1>
+
+        <p class="d-inline-flex gap-1">
+            <a class="btn b" data-bs-toggle="collapse" href="#pt" role="button" aria-expanded="true" aria-controls="pt">Português</a>
+            <button class="btn b" type="button" data-bs-toggle="collapse" data-bs-target="#en" aria-expanded="false" aria-controls="en">Inglês</button>
+            <button class="btn b" type="button" data-bs-toggle="collapse" data-bs-target=".multi-collapse" aria-expanded="false" aria-controls="pt en">Ambos</button>
+        </p>
+
         <div id="abertura">
-            <h1>Visão Geral</h1>
-
-            <div id="pt">
-                <h2>Em português</h2>
-
+            <div id="pt" class="area collapse multi-collapse show">
                 <p>&emsp;Bom dia, hoje, o primeiro ano de informática do IFES, irá apresentar os Impactos da Inteligência Artificial 
                     na sociedade e no meio ambiente. </p>
                 <p>&emsp;Nosso grupo de apresentação é composta por Lais, Gabriel, Thiago, Ana Carolina, 
@@ -101,9 +101,7 @@
                 <p>&emsp;Com vocês, os impactos da inteligência artificial na sociedade e no meio ambiente</p>
             </div>
 
-            <div id="en">
-                <h2>Em inglês</h2>
-
+            <div id="en" class="area collapse multi-collapse">
                 <p>&emsp;Good morning, everyone. My name is Pietra, and I am a student from the first TII class at IFES. Today, our class will present 
                     the Impacts of Artificial Intelligence on Society and the Environment.</p>
                 <p>&emsp;Our presentation group is composed of Lais, Gabriel, Thiago, Ana Carolina, Bernardo and Pietra.</p>

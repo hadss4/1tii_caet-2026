@@ -124,7 +124,7 @@ main.pagina-video {
     flex-wrap: wrap;
 }
 
-#download li a, #downloadslide li a{
+#download li a, #downloadslide li a, .b{
     display: inline-block;
     background-color: #2e4332;
     color: #d5d3cc;
@@ -135,7 +135,7 @@ main.pagina-video {
     transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
-#download li a:hover, #downloadslide li a:hover{
+#download li a:hover, #downloadslide li a:hover, .b:hover{
     background-color: #1e2d22;
     color: #ffffff;
     transform: translateY(-2px);
@@ -150,14 +150,13 @@ main div p, main div li{
     text-align: justify;
 }
 
-#mapa {
+#mapa, .area {
     background-color: rgba(255, 255, 255, 0.25);
     border-radius: 16px;
     padding: 25px;
     margin-bottom: 40px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.10);
 }
-
 
 .estado_info {
     min-height: 200px;
@@ -220,10 +219,16 @@ main div p, main div li{
 }
 
 /* APRESENTAÇÃO */
+#abertura {
+    display: flex;
+    flex-direction: row;
+    column-gap: 20px;
+}
 
 #slide {
     display: flex;
     flex-direction: row;
+    column-gap: 20px;
 }
 
 #carouselExampleIndicators {
@@ -232,8 +237,15 @@ main div p, main div li{
     padding: 0;
 }
 
-#downloadslide {
-    margin-left: 30px;
+.navbar-nav{
+    column-gap: 5%;
+}
+
+.navbar-nav li a:hover{
+    background-color: #1e2d22;
+    color: #ffffff;
+    border-radius: 10px;
+    transition: 0.3s ease;
 }
 
 @media (max-width: 768px) {
