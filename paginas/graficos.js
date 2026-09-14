@@ -83,7 +83,7 @@ for (const item of info) {
             labels: item.labels,
             datasets: [{
                 data: item.data,
-                backgroundColor: ['#1b7b3d', '#2dc48d', '#b7ff90', '#73d6ee', '#1a67a5', '#0d3b66'],
+                backgroundColor: ['#005200', '#4ea93b', '#92e27a', '#2a9db5',  '#0354a4', '#9be7ff'],
                 borderWidth: 0.3,
                 borderColor: '#0a3323',
             }]
