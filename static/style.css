@@ -11,9 +11,6 @@ html, body {
 }
 
 :root{
-    /*
-    --bl: #0a3323;
-    --cy: #45512f;*/
     --bl: #0a3323;
     --cy: #2e4332;
     --wh: #d5d3cc;
@@ -212,7 +209,7 @@ main div p, main div li{
     position: relative;
     width: 100%;
     padding: 15px;
-    background-color: var(--wh);                  /* Mesma cor bege/acinzentada do site */
+    background-color: rgba(255, 255, 255, 0.25);
     border-radius: 8px;
     border: 1px solid rgba(10, 51, 35, 0.15);     /* Borda discreta no tom verde do site */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);   /* Sombra suave para dar relevo */
@@ -282,6 +279,11 @@ main div p, main div li{
 }
 
 /* APRESENTAÇÃO */
+#abertura {
+    flex-direction: column;
+    column-gap: 0px;
+}
+
 #slide {
     flex-direction: column;
 }
